@@ -68,6 +68,15 @@ function loadSketchpad() {
   context.drawImage(img, 0, 0);
 }
 
+var loadButton = document.getElementById('load');
+var saveButton = document.getElementById('save');
+var clearButton = document.getElementById('clear');
+loadButton.addEventListener('click', loadSketchpad);
+saveButton.addEventListener('click', saveSketchpad);
+clearButton.addEventListener('click', function() {
+  clearSketchpad(sketchpad, context);
+});
+
 sketchpad.addEventListener('mousedown', mouseDown, false);
 sketchpad.addEventListener('mousemove', mouseMoves, false);
 window.addEventListener('mouseup', mouseUp, false);
